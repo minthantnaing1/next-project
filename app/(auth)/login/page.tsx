@@ -3,13 +3,18 @@ import logo from "../../../public/logo.jpg";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import AuthForm from "@/app/(auth)/components/AuthForm";
+import Link from "next/link";
+import ROUTES from "@/route";
 
 function page() {
   return (
     <div className="flex">
       <div className="w-2/4 p-10 bg-[var(--primary)] h-screen flex items-center justify-center">
         <div className="space-y-10">
-          <div className="flex items-center justify-center gap-4">
+          <Link
+            href={ROUTES.HOME}
+            className="flex items-center justify-center gap-4"
+          >
             <Image
               src={logo}
               alt="Logo"
@@ -20,7 +25,7 @@ function page() {
             <h1 className="text-4xl font-semibold">
               Creative <span className="text-[var(--main)]">Coder</span> Forum
             </h1>
-          </div>
+          </Link>
           <p className="text-lg text-gray-300 mt-6">
             lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
             quisquam. Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -28,7 +33,9 @@ function page() {
             adipisicing elit. Voluptas, quisquam. Lorem ipsum dolor sit amet
             consectetur adipisicing elit. Voluptas, quisquam.
           </p>
-          <Button type="outline">Create a new account ?</Button>
+          <Link href={ROUTES.REGISTER}>
+            <Button variant="outline">Create a new account ?</Button>
+          </Link>
         </div>
       </div>
       <div className="w-2/4 h-screen flex items-center justify-center">

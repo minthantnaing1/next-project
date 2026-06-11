@@ -14,9 +14,10 @@ function Navbar() {
           width={60}
           height={60}
           className="rounded-full"
+          priority
         />
         <h1 className="font-bold">
-          Creative <span className="text-[var(--main)]">Coder</span>
+          Creative <span className="text-(--main)">Coder</span>
         </h1>
       </div>
       <div className="w-[300px] lg:w-[600px]">
@@ -29,6 +30,7 @@ function Navbar() {
           width={45}
           height={45}
           className="rounded-full object-cover aspect-square"
+          priority
         />
       </div>
     </nav>

@@ -11,16 +11,19 @@ function SearchInput() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("search") || "");
-  const [debouncedSearch] = useDebounce(search, 2000);
+  const [debouncedSearch] = useDebounce(search, 500);
 
   useEffect(() => {
     const currentQuery = queryString.parse(window.location.search);
     const updatedQuery = { ...currentQuery, search: debouncedSearch };
 
-    const url = queryString.stringifyUrl({
-      url: window.location.pathname,
-      query: updatedQuery,
-    });
+    const url = queryString.stringifyUrl(
+      {
+        url: window.location.pathname,
+        query: updatedQuery,
+      },
+      { skipEmptyString: true, skipNull: true },
+    );
     router.push(url);
   }, [debouncedSearch, router]);
 

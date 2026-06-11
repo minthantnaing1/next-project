@@ -25,13 +25,13 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  let session = await auth();
+  const session = await auth();
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="bg-[var(--secondary)] text-white min-h-full flex flex-col">
+      <body className="bg-(--secondary) text-white min-h-full flex flex-col">
         <SessionProvider session={session}>{children}</SessionProvider>
         <ClientToast />
       </body>

@@ -1,17 +1,35 @@
 import { auth } from "@/auth";
 
+import ButtonLink from "@/components/ButtonLink";
+import Filters from "@/components/Filters";
+import ThreadCard from "@/components/ThreadCard";
+import ROUTES from "@/route";
+
 async function page({
   searchParams,
 }: {
-  searchParams: Promise<{ search: string | undefined }>;
+  searchParams: Promise<{
+    search: string | undefined;
+    filter: string | undefined;
+  }>;
 }) {
   const session = await auth();
+  const { search, filter } = await searchParams;
   console.log(session);
-  const { search } = await searchParams;
   return (
     <>
-      <div>{session?.user?.name}</div>
-      <div>{search}</div>
+      <div className="flex items-center justify-between p-5">
+        <div>
+          <h1 className="text-2xl font-bold">All Threads</h1>
+        </div>
+        <div>
+          <ButtonLink href={ROUTES.QUESTION_CREATE}>
+            Create new thread
+          </ButtonLink>
+        </div>
+      </div>
+      <Filters />
+      <ThreadCard />
     </>
   );
 }

@@ -6,7 +6,7 @@ function LeftSidebar() {
   return (
     <div className="w-1/5 px-5 py-2">
       <ul className="space-y-6">
-        <li className="px-3 py-3 bg-[var(--main)] rounded-xl">
+        <li className="px-3 py-3 bg-(--main) rounded-xl">
           <Link
             href={ROUTES.HOME}
             className="flex items-center gap-2 text-md font-medium"
@@ -14,7 +14,7 @@ function LeftSidebar() {
             <FaHome /> Home
           </Link>
         </li>
-        <li className="px-3 py-3 bg-[var(--main)] rounded-xl">
+        <li className="px-3 py-3 bg-(--primary) rounded-xl">
           <Link
             href={ROUTES.QUESTIONS}
             className="flex items-center gap-2 text-md font-medium"
@@ -22,28 +22,28 @@ function LeftSidebar() {
             <FaHome /> Tags
           </Link>
         </li>
-        <li className="px-3 py-3 bg-[var(--main)] rounded-xl">
+        <li className="px-3 py-3 bg-(--primary) rounded-xl">
           <Link
             href={ROUTES.QUESTIONS}
             className="flex items-center gap-2 text-md font-medium"
           >
-            <FaHome /> Questions
+            <FaHome /> Popular questions
           </Link>
         </li>
-        <li className="px-3 py-3 bg-[var(--main)] rounded-xl">
+        <li className="px-3 py-3 bg-(--primary) rounded-xl">
           <Link
             href={ROUTES.QUESTIONS}
             className="flex items-center gap-2 text-md font-medium"
           >
-            <FaHome /> Products
+            <FaHome /> Ask a new question
           </Link>
         </li>
-        <li className="px-3 py-3 bg-[var(--main)] rounded-xl">
+        <li className="px-3 py-3 bg-(--primary) rounded-xl">
           <Link
             href={ROUTES.QUESTIONS}
             className="flex items-center gap-2 text-md font-medium"
           >
-            <FaHome /> Cars
+            <FaHome /> Newest questions
           </Link>
         </li>
 

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import logo from "../../../public/logo.jpg";
-import Input from "@/components/Input";
 import Button from "@/components/Button";
-import AuthForm from "@/app/(auth)/components/AuthForm";
 import ROUTES from "@/route";
 import Link from "next/link";
+import AuthForm from "../components/AuthForm";
+import { signUpWithCredentials } from "@/lib/actions/SignUpWithCredentials.action";
 
 function page() {
   return (
@@ -39,29 +39,7 @@ function page() {
         </div>
       </div>
       <div className="w-2/4 h-screen flex items-center justify-center">
-        <div className="w-4/5 space-y-6">
-          <h3 className="text-xl font-semibold text-center">
-            Sign Up to Creative <span className="text-(--main)">Coder</span>{" "}
-            Forum
-          </h3>
-          <div>
-            <Input label="Name" />
-          </div>
-          <div>
-            <Input label="Username" />
-          </div>
-          <div>
-            <Input label="Email Address" />
-          </div>
-          <div>
-            <Input label="Password" />
-          </div>
-
-          <div>
-            <Button>Register</Button>
-          </div>
-          <AuthForm />
-        </div>
+        <AuthForm type="register" submitAction={signUpWithCredentials} />
       </div>
     </div>
   );

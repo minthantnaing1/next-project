@@ -15,7 +15,15 @@ function Button({
       {...props}
       className={`${image ? "flex items-center" : ""} w-full gap-2 px-4 py-2 ${variant === "outline" ? "border-2 border-(--main)" : "bg-(--main)"} rounded-lg`}
     >
-      {image && <Image src={image} alt="Google" width={30} height={30} />}
+      {image && (
+        <Image
+          src={image}
+          alt="icon"
+          width={30}
+          height={30}
+          className="w-auto h-auto"
+        />
+      )}
       <span>{children}</span>
     </button>
   );
